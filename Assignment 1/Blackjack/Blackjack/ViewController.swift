@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var scoreLabel : UILabel!
+    
+    var count:Int = 0
     var blackjack = BlackjackModel()
 
     override func viewDidLoad() {
@@ -17,6 +20,7 @@ class ViewController: UIViewController {
         blackjack.setup()
         showDealerHand(blackjack.dealerHand)
         showPlayerHand(blackjack.playerHand)
+        scoreLabel.text = String(blackjack.playerHand.score)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -52,7 +56,25 @@ class ViewController: UIViewController {
         blackjack.playerHandDraws()
         println(blackjack.playerHand.description())
         showPlayerHand(blackjack.playerHand)
+        if blackjack.checkPlayerBust(){
+            scoreLabel.text = String(blackjack.playerHand.score)
+            var alert = UIAlertController(title: "Round Over", message: "You went over 21!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click for next round", style: UIAlertActionStyle.Default, handler: {(action)
+            -> Void in
+                self.blackjack.newRound()
+                self.showPlayerHand(self.blackjack.playerHand)
+                self.showDealerHand(self.blackjack.dealerHand)
+                self.count = self.count + 1
+            
+                if self.count > 5{
+                    self.blackjack.deck.reset()
+                    self.count = 0
+                }
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
+    
     @IBAction func playerStands(sender : AnyObject){
         blackjack.dealerHand.cards[0].cardClose = false
         blackjack.dealerHand.handClose = false
@@ -60,10 +82,44 @@ class ViewController: UIViewController {
         while (blackjack.dealerHand.getPipValue() < 17){
             blackjack.dealerHandDraws()
             showDealerHand(blackjack.dealerHand)
-            sleep(2)
         }
-        blackjack.dealerPlays()
+        
+        var alertControl:Int = blackjack.dealerPlays()
+        
+        popUpBox(alertControl)
+
     }
     
+    func popUpBox(alertInt:Int){
+        var titles = "Round over"
+        var messages = ""
+        if alertInt == 0 {
+            messages = "Player wins"
+            scoreLabel.text = String(blackjack.playerHand.score)
+        } else if alertInt == 1{
+            messages = "Dealer wins"
+            scoreLabel.text = String(blackjack.playerHand.score)
+        }
+        else if alertInt == 2{
+            messages = "It's a draw!"
+            scoreLabel.text = String(blackjack.playerHand.score)
+        }
+        
+        var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Click for next round", style: UIAlertActionStyle.Default, handler: {(action)
+            -> Void in
+            self.blackjack.newRound()
+            self.showPlayerHand(self.blackjack.playerHand)
+            self.showDealerHand(self.blackjack.dealerHand)
+            self.count = self.count + 1
+            
+            if self.count > 5{
+                self.blackjack.deck.reset()
+                self.count = 0
+            }
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+
 }
 

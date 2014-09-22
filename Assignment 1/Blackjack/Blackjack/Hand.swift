@@ -11,9 +11,11 @@ import Foundation
 class Hand{
     var cards: [Card] = []
     var handClose: Bool
+    var score: Int
     
     init(){
         handClose = false
+        score = 100
     }
     
     func countCards() -> Int{
@@ -48,6 +50,10 @@ class Hand{
             handList += i.description() + "\n"
         }
         return handList
+    }
+    
+    func emptyHand(){
+        cards.removeAll(keepCapacity: false)
     }
     
 }

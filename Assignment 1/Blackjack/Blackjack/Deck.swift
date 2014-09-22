@@ -47,5 +47,14 @@ class Deck{
         }
         return deckList
     }
-
+    
+    func reset(){
+        cards.removeAll(keepCapacity: false)
+        for suit in 0...3{
+            for cardNumber in 1...13{
+                cards.insert(Card(suit: suit, cardNumber: cardNumber), atIndex: 0)
+            }
+        }
+        self.cards = shuffle(self.cards);
+    }
 }

@@ -43,26 +43,50 @@ class BlackjackModel{
         switch ender{
         case 0:
             println("Player wins")
+            playerHand.score = playerHand.score + 2
         case 1:
             println("Dealer wins")
+            playerHand.score = playerHand.score - 2
         default:
             println("Draw")
         }
     }
     
-    func dealerPlays(){
+    func dealerPlays() -> Int{
         while (dealerHand.getPipValue() < 17){
             dealerHandDraws()
         }
         if dealerHand.getPipValue() > 21{
             gameEnds(0)
+            return 0
         }
         else if dealerHand.getPipValue() >= playerHand.getPipValue(){
             gameEnds(1)
+            return 1
         }
         else{
             gameEnds(2)
+            return 2
         }
+    }
+    
+    func checkPlayerBust() -> Bool{
+        if playerHand.getPipValue() > 21{
+            playerHand.score = playerHand.score - 2
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
+    func newRound(){
+        dealerHand.emptyHand()
+        playerHand.emptyHand()
+        playerHandDraws()
+        dealerHandDraws()
+        playerHandDraws()
+        dealerHandDraws()
     }
     
 }
