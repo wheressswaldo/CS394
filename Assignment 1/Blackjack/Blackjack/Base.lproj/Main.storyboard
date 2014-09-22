@@ -35,7 +35,7 @@
                                 <rect key="frame" x="22" y="394" width="70" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="c5D-Ex-IxN"/>
+                                    <constraint firstAttribute="width" constant="70" id="sS7-LG-7iW"/>
                                 </constraints>
                                 <state key="normal" title="Hit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,7 +48,7 @@
                                 <rect key="frame" x="124" y="394" width="70" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="wcb-Hw-fZP"/>
+                                    <constraint firstAttribute="width" constant="70" id="H06-XQ-ON7"/>
                                 </constraints>
                                 <state key="normal" title="Stand">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,7 +60,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKk-c2-1vg">
                                 <rect key="frame" x="218" y="381" width="95" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="c9f-c1-3pd"/>
+                                    <constraint firstAttribute="width" constant="95" id="Zuq-wn-6Sj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -69,18 +69,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.17908776747619559" green="0.64339524872448983" blue="0.022873967365026626" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="yoM-Ab-pYY" firstAttribute="centerY" secondItem="eKk-c2-1vg" secondAttribute="centerY" id="BnR-cy-YXs"/>
-                            <constraint firstItem="5nO-XU-JgG" firstAttribute="leading" secondItem="TWT-Ve-y7E" secondAttribute="leading" id="Gwd-pz-2Xh"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eKk-c2-1vg" secondAttribute="bottom" constant="163" id="LWa-Dc-GhH"/>
-                            <constraint firstItem="ahC-vJ-PDo" firstAttribute="leading" secondItem="TWT-Ve-y7E" secondAttribute="leading" id="OTM-MX-Kq4"/>
-                            <constraint firstItem="TWT-Ve-y7E" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="248" id="P9W-xB-Xjq"/>
-                            <constraint firstItem="5nO-XU-JgG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="6" id="b0G-nu-1Du"/>
-                            <constraint firstItem="yoM-Ab-pYY" firstAttribute="leading" secondItem="ahC-vJ-PDo" secondAttribute="trailing" constant="32" id="dZn-Vr-gad"/>
-                            <constraint firstItem="ahC-vJ-PDo" firstAttribute="baseline" secondItem="yoM-Ab-pYY" secondAttribute="firstBaseline" id="fRb-Ud-dj7"/>
-                            <constraint firstItem="yoM-Ab-pYY" firstAttribute="baseline" secondItem="ahC-vJ-PDo" secondAttribute="firstBaseline" id="kel-it-Xhh"/>
-                            <constraint firstItem="eKk-c2-1vg" firstAttribute="leading" secondItem="yoM-Ab-pYY" secondAttribute="trailing" constant="24" id="ock-W8-eGn"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ahC-vJ-PDo" secondAttribute="bottom" constant="176" id="x3c-UV-4B6"/>
-                            <constraint firstItem="5nO-XU-JgG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="31" id="yxI-vI-WzH"/>
+                            <constraint firstItem="5nO-XU-JgG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="6" id="9tt-op-Ywa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eKk-c2-1vg" secondAttribute="bottom" constant="163" id="FAl-Ge-02x"/>
+                            <constraint firstItem="TWT-Ve-y7E" firstAttribute="leading" secondItem="ahC-vJ-PDo" secondAttribute="leading" id="Fx9-uE-qsO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ahC-vJ-PDo" secondAttribute="bottom" constant="176" id="JGj-vs-XAq"/>
+                            <constraint firstItem="yoM-Ab-pYY" firstAttribute="baseline" secondItem="ahC-vJ-PDo" secondAttribute="firstBaseline" id="Lsr-OL-BRu"/>
+                            <constraint firstItem="TWT-Ve-y7E" firstAttribute="leading" secondItem="5nO-XU-JgG" secondAttribute="leading" id="SVX-iS-o9C"/>
+                            <constraint firstItem="ahC-vJ-PDo" firstAttribute="baseline" secondItem="yoM-Ab-pYY" secondAttribute="firstBaseline" id="TAt-xb-R0D"/>
+                            <constraint firstItem="yoM-Ab-pYY" firstAttribute="leading" secondItem="ahC-vJ-PDo" secondAttribute="trailing" constant="32" id="TaY-vk-Svg"/>
+                            <constraint firstItem="TWT-Ve-y7E" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="248" id="Xyu-M5-T3b"/>
+                            <constraint firstItem="yoM-Ab-pYY" firstAttribute="centerY" secondItem="eKk-c2-1vg" secondAttribute="centerY" id="bdU-0T-0FJ"/>
+                            <constraint firstItem="eKk-c2-1vg" firstAttribute="leading" secondItem="yoM-Ab-pYY" secondAttribute="trailing" constant="24" id="cIT-kw-eJk"/>
+                            <constraint firstItem="5nO-XU-JgG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="31" id="jiY-ee-fjN"/>
                         </constraints>
                     </view>
                     <connections>

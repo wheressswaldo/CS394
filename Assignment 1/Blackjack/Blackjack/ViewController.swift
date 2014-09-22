@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     
     var count:Int = 0
     var blackjack = BlackjackModel()
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         blackjack.setup()
@@ -29,8 +30,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func clean(){
+        for view in self.view.subviews{
+            if view is UIImageView{
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
     func showHandAtyPos(givenHand:Hand, yPos:Int){
-
         for index in 0..<givenHand.countCards(){
             var tempCard:Card = givenHand.getCardAtIndex(index)
             var tempFileName:String = tempCard.fileName()
@@ -61,6 +69,7 @@ class ViewController: UIViewController {
             var alert = UIAlertController(title: "Round Over", message: "You went over 21!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Click for next round", style: UIAlertActionStyle.Default, handler: {(action)
             -> Void in
+                self.clean()
                 self.blackjack.newRound()
                 self.showPlayerHand(self.blackjack.playerHand)
                 self.showDealerHand(self.blackjack.dealerHand)
@@ -108,6 +117,7 @@ class ViewController: UIViewController {
         var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Click for next round", style: UIAlertActionStyle.Default, handler: {(action)
             -> Void in
+            self.clean()
             self.blackjack.newRound()
             self.showPlayerHand(self.blackjack.playerHand)
             self.showDealerHand(self.blackjack.dealerHand)
