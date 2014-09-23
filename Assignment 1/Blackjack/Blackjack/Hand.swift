@@ -34,8 +34,17 @@ class Hand{
     
     func getPipValue() -> Int{
         var aValue = 0
+        var aceCount: Int = 0
+        
         for i in 0..<cards.count{
             aValue = aValue + cards[i].pipValue
+            if cards[i].cardNumber == 1{
+                aceCount++
+            }
+        }
+        while (aValue > 21 && aceCount>0){
+            aValue = aValue - 10
+            aceCount = aceCount - 1
         }
         return aValue
     }

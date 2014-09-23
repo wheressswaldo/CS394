@@ -22,14 +22,15 @@ class BlackjackModel{
     }
     
     func setup(){
-        playerHandDraws()
-        dealerHandDraws()
-        playerHandDraws()
-        dealerHandDraws()
-        
-        println(playerHand.description())
-        println(dealerHand.description())
         println(deck.description())
+        playerHandDraws()
+        dealerHandDraws()
+        playerHandDraws()
+        dealerHandDraws()
+        println("Player ")
+        print(playerHand.description())
+        println("Dealer ")
+        print(dealerHand.description())
     }
     
     func dealerHandDraws(){
@@ -56,11 +57,11 @@ class BlackjackModel{
         while (dealerHand.getPipValue() < 17){
             dealerHandDraws()
         }
-        if dealerHand.getPipValue() > 21{
+        if dealerHand.getPipValue() > 21 || dealerHand.getPipValue() < playerHand.getPipValue(){
             gameEnds(0)
             return 0
         }
-        else if dealerHand.getPipValue() >= playerHand.getPipValue(){
+        else if dealerHand.getPipValue() > playerHand.getPipValue(){
             gameEnds(1)
             return 1
         }
@@ -73,6 +74,16 @@ class BlackjackModel{
     func checkPlayerBust() -> Bool{
         if playerHand.getPipValue() > 21{
             playerHand.score = playerHand.score - 2
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
+    func checkBlackJack() -> Bool{
+        if playerHand.getPipValue() == 21{
+            playerHand.score = playerHand.score + 2
             return true
         }
         else{

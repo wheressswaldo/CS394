@@ -84,6 +84,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dealerLabel" destination="5nO-XU-JgG" id="isy-E1-NFN"/>
+                        <outlet property="playerLabel" destination="TWT-Ve-y7E" id="Csy-2b-3Xq"/>
                         <outlet property="scoreLabel" destination="eKk-c2-1vg" id="CYM-cA-Bny"/>
                     </connections>
                 </viewController>

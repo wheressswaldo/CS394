@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var scoreLabel : UILabel!
+    @IBOutlet var playerLabel : UILabel!
+    @IBOutlet var dealerLabel : UILabel!
     
     var count:Int = 0
     var blackjack = BlackjackModel()
@@ -21,8 +23,13 @@ class ViewController: UIViewController {
         blackjack.setup()
         showDealerHand(blackjack.dealerHand)
         showPlayerHand(blackjack.playerHand)
+        playerLabel.text = "Player (" + String(blackjack.playerHand.getPipValue()) + ")"
+        dealerLabel.text = "Dealer (" + String(blackjack.dealerHand.getPipValue()) + ")"
         scoreLabel.text = String(blackjack.playerHand.score)
         // Do any additional setup after loading the view, typically from a nib.
+        if blackjack.checkBlackJack(){
+            popUpBox(5)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,26 +69,17 @@ class ViewController: UIViewController {
     
     @IBAction func hitCard(sender : AnyObject){
         blackjack.playerHandDraws()
-        println(blackjack.playerHand.description())
+        println("Player ")
+        print(blackjack.playerHand.description())
+        playerLabel.text = "Player (" + String(blackjack.playerHand.getPipValue()) + ")"
         showPlayerHand(blackjack.playerHand)
         if blackjack.checkPlayerBust(){
-            scoreLabel.text = String(blackjack.playerHand.score)
-            var alert = UIAlertController(title: "Round Over", message: "You went over 21!", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Click for next round", style: UIAlertActionStyle.Default, handler: {(action)
-            -> Void in
-                self.clean()
-                self.blackjack.newRound()
-                self.showPlayerHand(self.blackjack.playerHand)
-                self.showDealerHand(self.blackjack.dealerHand)
-                self.count = self.count + 1
-            
-                if self.count > 5{
-                    self.blackjack.deck.reset()
-                    self.count = 0
-                }
-            }))
-            self.presentViewController(alert, animated: true, completion: nil)
+            popUpBox(3)
         }
+        else if blackjack.checkBlackJack(){
+            popUpBox(4)
+        }
+        
     }
     
     @IBAction func playerStands(sender : AnyObject){
@@ -90,9 +88,11 @@ class ViewController: UIViewController {
         showDealerHand(blackjack.dealerHand)
         while (blackjack.dealerHand.getPipValue() < 17){
             blackjack.dealerHandDraws()
+            println("Dealer ")
+            print(blackjack.dealerHand.description())
             showDealerHand(blackjack.dealerHand)
+            dealerLabel.text = "Dealer (" + String(blackjack.dealerHand.getPipValue()) + ")"
         }
-        
         var alertControl:Int = blackjack.dealerPlays()
         
         popUpBox(alertControl)
@@ -103,7 +103,7 @@ class ViewController: UIViewController {
         var titles = "Round over"
         var messages = ""
         if alertInt == 0 {
-            messages = "Player wins"
+            messages = "You win!"
             scoreLabel.text = String(blackjack.playerHand.score)
         } else if alertInt == 1{
             messages = "Dealer wins"
@@ -111,6 +111,18 @@ class ViewController: UIViewController {
         }
         else if alertInt == 2{
             messages = "It's a draw!"
+            scoreLabel.text = String(blackjack.playerHand.score)
+        }
+        else if alertInt == 3{
+            messages = "You went over 21!"
+            scoreLabel.text = String(blackjack.playerHand.score)
+        }
+        else if alertInt == 4{
+            messages = "Twenty One!! You win!"
+            scoreLabel.text = String(blackjack.playerHand.score)
+        }
+        else if alertInt == 5{
+            messages = "BLACKJACK!!!!"
             scoreLabel.text = String(blackjack.playerHand.score)
         }
         
@@ -121,6 +133,12 @@ class ViewController: UIViewController {
             self.blackjack.newRound()
             self.showPlayerHand(self.blackjack.playerHand)
             self.showDealerHand(self.blackjack.dealerHand)
+            println("Player ")
+            print(self.blackjack.playerHand.description())
+            println("Dealer ")
+            print(self.blackjack.dealerHand.description())
+            self.playerLabel.text = "Player (" + String(self.blackjack.playerHand.getPipValue()) + ")"
+            self.dealerLabel.text = "Dealer (" + String(self.blackjack.dealerHand.getPipValue()) + ")"
             self.count = self.count + 1
             
             if self.count > 5{

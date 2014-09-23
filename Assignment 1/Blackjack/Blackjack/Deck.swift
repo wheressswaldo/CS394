@@ -37,6 +37,7 @@ class Deck{
             let j = Int(arc4random_uniform(UInt32(list.count - i))) + i
             list.insert(list.removeAtIndex(j), atIndex: i)
         }
+        println("DECK SHUFFLED")
         return list
     }
     
