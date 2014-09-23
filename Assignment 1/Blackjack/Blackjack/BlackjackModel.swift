@@ -47,7 +47,7 @@ class BlackjackModel{
             playerHand.score = playerHand.score + 2
         case 1:
             println("Dealer wins")
-            playerHand.score = playerHand.score - 2
+            playerHand.score = playerHand.score - 1
         default:
             println("Draw")
         }
@@ -73,7 +73,7 @@ class BlackjackModel{
     
     func checkPlayerBust() -> Bool{
         if playerHand.getPipValue() > 21{
-            playerHand.score = playerHand.score - 2
+            playerHand.score = playerHand.score - 1
             return true
         }
         else{
