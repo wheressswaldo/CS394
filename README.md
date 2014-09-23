@@ -5,7 +5,7 @@ CS394 - iOS
 
 Assignment 1 README:
   - BUG: Images from previous round doesn't disappear in new round. The new round images are stacked on top of the old ones.
-    FIXED!!!!!!!!!!
+    **FIXED!!!!!!!!!!**
 
   - Everything else works as expected, dealer AI, score, hit, stand, etc.
   - The betting win/loss score is static for now
