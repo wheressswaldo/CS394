@@ -3,6 +3,8 @@ CS394
 
 CS394 - iOS
 
+**Programming Languages Used:** Swift
+
 Assignment 1 README:
   - BUG: Images from previous round doesn't disappear in new round. The new round images are stacked on top of the old ones.
     **FIXED!!!!!!!!!!**
@@ -14,5 +16,4 @@ Assignment 1 README:
   - DONE: Need to add case for Blackjack win (21)
   - TODO: DOUBLE AND SPLIT (maybe more complicated :(, especially with viewing the cards) needs to be added, but only if there is time as this might be too much for a simple game.
 
-  - Code is pretty ghetto, still learning iOS: Can be cleaned up a lot if there is time. **cleaned up a lot from initial release but still needs work**
-
+  - Code is pretty ghetto, still learning iOS: Can be cleaned up a lot if there is time.
