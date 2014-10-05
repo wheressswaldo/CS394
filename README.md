@@ -5,11 +5,22 @@ CS394 - iOS
 
 **Programming Languages Used:** Swift
 
-Assignment 1 README:
+**Assignment 1 README:**
 
-  - Everything else works as expected, dealer AI, score, hit, stand, etc.
-  - The betting win/loss score is static for now
+  * Everything else works as expected, dealer AI, score, hit, stand, etc.
+  * The betting win/loss score is static for now
 
-  - TODO: DOUBLE AND SPLIT (maybe more complicated :(, especially with viewing the cards) needs to be added, but only if there is time as this might be too much for a simple game.
+**Assignment 2 README:**
 
-  - Code is pretty ghetto, still learning iOS: Can be cleaned up a lot if there is time.
+  * Uses 3 decks of cards
+  * Multiple players (3 players) + Dealer
+  * Ace is counted as both 1 and 11
+  * Multiple Swift Classes: Card, Hand, Deck, Model
+  * Built using interface builder, buttons for hit and stand and displaying score
+  * Cards shuffled after 5 games
+  
+  * **NOT DONE YET:** Although there are multiple players, only player 1 can be controlled at this time
+  * The framework for other players is set up. (Array of players, var with currentPlayer)
+  * Have to edit to switch players (increase currentPlayer by 1) when standing or hitting, instead of going straight to dealer's turn.
+
+  * Extra credit: Calculate and recommend a player if they should hit based on Blackjack Basic Strategy.
