@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             showInactiveHand(blackjack.playerHands[1], adjustment: 1)
         }
         playerLabel.text = "Current Player: " + String(currentPlayer+1) +
-                            "(" + String(blackjack.playerHands[currentPlayer].getPipValue()) + ")"
+                            " (" + String(blackjack.playerHands[currentPlayer].getPipValue()) + ")"
         dealerLabel.text = "Dealer (" + String(blackjack.dealerHand.getPipValue()) + ")"
         scoreLabel.text = String(blackjack.playerHands[currentPlayer].score)
         // Do any additional setup after loading the view, typically from a nib.
@@ -109,7 +109,7 @@ class ViewController: UIViewController {
         println("Player ")
         print(blackjack.playerHands[currentPlayer].description())
         playerLabel.text = "Current Player: " + String(currentPlayer+1) +
-            "(" + String(blackjack.playerHands[currentPlayer].getPipValue()) + ")"
+            " (" + String(blackjack.playerHands[currentPlayer].getPipValue()) + ")"
         showPlayerHand(blackjack.playerHands[currentPlayer])
         if blackjack.checkPlayerBust(currentPlayer){
             popUpBox(3)
@@ -191,7 +191,7 @@ class ViewController: UIViewController {
             println("Dealer ")
             print(self.blackjack.dealerHand.description())
             self.playerLabel.text = "Current Player: " + String(self.currentPlayer+1) +
-                "(" + String(self.blackjack.playerHands[self.currentPlayer].getPipValue()) + ")"
+                " (" + String(self.blackjack.playerHands[self.currentPlayer].getPipValue()) + ")"
             self.dealerLabel.text = "Dealer (" + String(self.blackjack.dealerHand.getPipValue()) + ")"
             self.count = self.count + 1
             

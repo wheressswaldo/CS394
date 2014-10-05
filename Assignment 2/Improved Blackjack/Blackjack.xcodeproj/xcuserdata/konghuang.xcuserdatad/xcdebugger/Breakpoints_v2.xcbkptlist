@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blackjack/Deck.swift"
-            timestampString = "433067988.409107"
+            timestampString = "434188577.284641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "shuffle(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blackjack/Deck.swift"
-            timestampString = "433067988.409107"
+            timestampString = "434188577.284641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "drawCard()"
             landmarkType = "5">
          </BreakpointContent>

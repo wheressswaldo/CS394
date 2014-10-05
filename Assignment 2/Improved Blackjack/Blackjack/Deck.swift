@@ -29,7 +29,11 @@ class Deck{
             returnCard = cards.removeLast()
             return returnCard
         }
-        return returnCard
+        else {
+            self.reset()
+            returnCard = cards.removeLast()
+            return returnCard
+        }
     }
     
     func shuffle<T>(var list: Array<T>) -> Array<T>{
