@@ -19,8 +19,8 @@ CS394 - iOS
   * Built using interface builder, buttons for hit and stand and displaying score
   * Cards shuffled after 5 games
   
-  * **NOT DONE YET:** Although there are multiple players, only player 1 can be controlled at this time
-  * The framework for other players is set up. (Array of players, var with currentPlayer)
-  * Have to edit to switch players (increase currentPlayer by 1) when standing or hitting, instead of going straight to dealer's turn.
+  * **Not done yet:** Although there are multiple players, only player 1 can be controlled at this time
+   - The framework for other players is set up. (Array of players, var with currentPlayer)
+   - Have to edit to switch players (increase currentPlayer by 1) when standing or hitting, instead of going straight to dealer's turn.
 
   * Extra credit: Calculate and recommend a player if they should hit based on Blackjack Basic Strategy.
