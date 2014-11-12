@@ -12,7 +12,6 @@ CS394 - iOS
 
 **Assignment 2 README:**
 
-  - **Done**
    * Uses 3 decks of cards
    * Multiple players (3 players) + Dealer
    * Ace is counted as both 1 and 11
@@ -21,7 +20,7 @@ CS394 - iOS
    * Cards shuffled after 5 games
   
 **Assignment 3 README:**
-  - **Done**
+
    * Multiple players - 2 users, 1 AI, + dealer
    * Supports both iPad and iPhone
    * Uses Autolayout
