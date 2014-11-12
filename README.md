@@ -20,7 +20,10 @@ CS394 - iOS
    * Built using interface builder, buttons for hit and stand and displaying score
    * Cards shuffled after 5 games
   
-  * **Not done yet:** 
-   - Although there are multiple players, only player 1 can be controlled at this time. The framework for other players is set up. (Array of players, var with currentPlayer)
-   - Have to edit to switch players (increase currentPlayer by 1) when standing or hitting, instead of going straight to dealer's turn.
-   - **Extra credit:** Calculate and recommend a player if they should hit based on Blackjack Basic Strategy.
+**Assignment 3 README:**
+  - **Done**
+   * Multiple players - 2 users, 1 AI, + dealer
+   * Supports both iPad and iPhone
+   * Uses Autolayout
+   * Keeps track of the score. Players start with $100. Minimum is $1.
+   * After a while, cards are reset and shuffled.
